@@ -1,0 +1,73 @@
+<div class="main-body">
+  <!-- loading... -->
+  <div class="loading" *ngIf="loading">
+    <app-loading text="Loading, please wait..."></app-loading>
+  </div>
+
+  <div class="loading" *ngIf="error">
+    <p>something went wrong, please try again...</p>
+  </div>
+
+  <!-- should do for isError -->
+  <div class="main-content" *ngIf="item && item.title">
+    <div class="image-cover">
+      <div class="image">
+        <img [src]="getImage(item.poster_path)" />
+      </div>
+      <a class="link" target="_black" [href]="item.homepage">Visit HomePage</a>
+    </div>
+    <div class="content">
+      <h2 class="title">
+        {{ item.title }}
+        <span class="year">({{ getYear(item.release_date) }})</span>
+      </h2>
+
+      <div class="item">
+        <h3>Genres</h3>
+        <span class="genres" *ngFor="let value of item.genres">{{
+          value.name
+        }}</span>
+      </div>
+
+      <div class="item rating">
+        <h3>AllMovie Rating</h3>
+        {{ item.vote_average }}
+      </div>
+
+      <div class="item description">
+        <h3>Description</h3>
+        <article>
+          {{ item.overview }}
+        </article>
+      </div>
+
+      <div class="item casts-container">
+        <h3>Casts</h3>
+        <div *ngFor="let cast of item.credits.cast" class="casts">
+          <p>
+            {{ cast.name
+            }}<span class="cast-character"> - {{ cast.character }}</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- trailer... -->
+      <div *ngIf="hasThumbnail(item)" class="item description">
+        <h3>Trailers</h3>
+        <div class="video-cover-box">
+          <a
+            *ngFor="let video of item.videos.results"
+            target="_blank"
+            [href]="getVideoUrl(video.key)"
+            class="video-cover"
+          >
+            <img
+              class="video-thumb-img"
+              [src]="getYoutubeThumbnail(video.key)"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="tag-parent">
+  <p
+    class="tag"
+    [class.tag--poor]="getTagClass(tag) == 'poor'"
+    [class.tag--moderate]="getTagClass(tag) == 'moderate'"
+    [class.tag--excellent]="getTagClass(tag) == 'excellent'"
+  >
+    {{ tag }}
+  </p>
+</div>

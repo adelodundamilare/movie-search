@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://unpkg.com/bootstrap@4.0.0/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap");
+
+:root{
+  --primary: #007AFF;
+  --dark-primary: #0052ac;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 2;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-weight: 800;
+// }
+
+input,
+select,
+button {
+  border: 0;
+  outline: 0;
+  color: inherit;
+  background-color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

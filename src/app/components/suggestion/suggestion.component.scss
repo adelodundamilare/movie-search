@@ -1,0 +1,28 @@
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  p {
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+    color: #666666;
+  }
+}
+
+.select {
+  font-size: 0.8em;
+  color: #999999;
+
+  span {
+    margin-right: 5px;
+  }
+}

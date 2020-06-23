@@ -1,0 +1,20 @@
+.loading {
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e5e5;
+  // background-color: white;
+  position: absolute;
+  width: 100%;
+  margin-top: -20px;
+  border-radius: 0 0 20px 20px;
+  // width: 100%;
+  left: 0;
+  z-index: 10;
+
+  p {
+    margin-top: 10px;
+  }
+}

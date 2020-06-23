@@ -1,0 +1,184 @@
+$maxHeight: 300px;
+
+.main {
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.form-cover {
+  height: 85vh;
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width:500px) {
+    padding: 0 10px;
+  }
+}
+
+.form {
+  background-color: white;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-input-div {
+  display: flex;
+  padding: 20px;
+
+  @media screen and (max-width:500px) {
+    padding: 10px;
+  }
+}
+
+.input {
+  font-size: 1.5em;
+  padding-left: 20px;
+  width: 100%;
+
+  @media screen and (max-width:500px) {
+    font-size: 1em;
+  }
+}
+
+.input::placeholder {
+  color: #999999;
+  font-weight: 300;
+}
+
+.icon {
+  border-right: 1px solid #f2f2f2;
+  padding-right: 20px;
+}
+
+.suggestions-cover {
+  border-top: 1px solid #ebebeb;
+  max-height: $maxHeight;
+  overflow: hidden;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  margin-top: -20px;
+  border-radius: 0 0 20px 20px;
+
+  //
+  transition-property: all;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.suggestions {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: $maxHeight;
+  height: 100%;
+}
+
+.title {
+  font-size: 0.8em;
+  color: #999999;
+  padding-left: 16px;
+}
+
+.item {
+  &:nth-of-type(even) {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+  }
+}
+
+.loading {
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $maxHeight;
+  color: #e5e5e5;
+  background-color: white;
+  position: absolute;
+  margin-top: -20px;
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+  left: 0;
+  z-index: 10;
+
+  p {
+    margin-top: 10px;
+  }
+}
+
+.footer {
+  font-size: 0.8em;
+  color: #999999;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+
+  .love {
+    color: red;
+  }
+}
+
+.single-modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(wheat, 0.1);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.close-modal{
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+  overflow: hidden;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @media screen and (max-width:500px) {
+    position: sticky;
+    right: 0;
+    top:0
+  }
+
+  &:hover{
+    background-color: var(--dark-primary);
+  }
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+
+    .copy{
+      display: block;
+    }
+  }
+}
+
+.love{
+  margin: 0 3px;
+  display: inline-block;
+}

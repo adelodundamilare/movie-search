@@ -1,0 +1,65 @@
+<div class="main">
+  <div class="form-cover">
+    <form class="form" autocomplete="off">
+      <input
+        autocomplete="false"
+        name="hidden"
+        type="text"
+        style="display: none;"
+      />
+      <div class="form-input-div">
+        <img class="icon" src="/assets/images/search.svg" />
+        <input
+          class="input"
+          placeholder="Search for any movie"
+          type="text"
+          [(ngModel)]="search"
+          (ngModelChange)="onChange()"
+          name="search"
+        />
+      </div>
+
+      <div *ngIf="isLoading && search.length > 0" class="loading">
+        <app-loading></app-loading>
+      </div>
+
+      <div *ngIf="isError" class="loading">
+        <div>
+          <img src="/assets/images/loading.svg" />
+          <p>unable to fetch, please try again</p>
+        </div>
+      </div>
+
+      <!-- movie suggestions... -->
+      <div *ngIf="suggestions.length > 0" class="suggestions-cover">
+        <div class="suggestions">
+          <h3 class="title">movie suggestions</h3>
+          <div
+            class="item"
+            (click)="showMovieDetails(item)"
+            *ngFor="let item of suggestions"
+          >
+            <app-suggestion [suggestion]="item"></app-suggestion>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- the footer -->
+  <div class="footer">
+    Made with <span style="display: contents;" class="love">❤</span> by Adelodun
+    Damilare | &nbsp; <span class="copy"> Copyright &copy; 2020</span>
+  </div>
+
+  <div *ngIf="showModal" class="single-modal">
+    <button (click)="closeModal()" type="button" class="close-modal">
+      <img src="/assets/images/close.svg" />
+    </button>
+    <app-single-movie
+      [loading]="isLoadingSingle"
+      [error]="isSingleError"
+      [item]="singleItem"
+    ></app-single-movie>
+  </div>
+</div>
